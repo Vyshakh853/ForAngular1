@@ -1,0 +1,40 @@
+<div class="table-responsive">
+            <h2 ng-hide="MessageHide">{{Message}}</h2>
+            <h1 class="text-center text-muted" ng-hide="ErrorMsgHide">{{ErrorMsg}}</h1>
+            <table class="table table-bordered text-center" ng-hide='tableshow'>
+            <thead>
+                <tr class="active table-striped" ng-repeat="title in BookList" ng-if="$first">
+                    <td ng-repeat="(key, val) in title | orderBy: key" ng-click="order(key)">{{key}}</td>
+                    <!-- <td ng-repeat="y in title" ng-bind="y"></td> -->
+                    <!-- <td ng-click="order('id')">ID</td>
+                    <td ng-click="order('Book_name')">Book Name</td>
+                    <td ng-click="order('Author_name')">Author Name</td>
+                    <td ng-click="order('Publisher_name')">Publisher Name</td>
+                    <td ng-click="order('Type')">Type</td>
+                    <td ng-click="order('Genres')">Genres</td>
+                    <td ng-click="order('Language')">Language</td>
+                    <td ng-click="order('Published_year')">Published Year</td>
+                    <td ng-click="order('Price')">Price</td> -->
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in BookList | orderBy: orderByItem | limitTo:100">
+                    <th ng-repeat="(key,val) in book | orderBy: key">{{val}}</th>
+                    <!-- <th ng-repeat="y in title" ng-bind="x.y"></th> -->
+                    <!-- <th class="table-bordered text-center" ng-bind="x.id"></th>
+                    <th class="table-bordered text-center" ng-bind="x.Book_name"></th>
+                    <th class="table-bordered text-center" ng-bind="x.Author_name"></th>
+                    <th class="table-bordered text-center" ng-bind="x.Publisher_name"></th>
+                    <th class="table-bordered text-center" ng-bind="x.Type"></th>
+                    <th class="table-bordered text-center" ng-bind="x.Genres"></th>
+                    <th class="table-bordered text-center" ng-bind="x.Language"></th>
+                    <th class="table-bordered text-center" ng-bind="x.Published_year"></th>
+                    <th class="table-bordered text-center" ng-bind="x.Price"></th> -->
+                    <th class="text-center"><button class="btn btn-danger" ng-click="deleteBook(book.id)">Delete</button></th>
+                    <th class="text-center"><a href="#myModal" class="btn btn-warning" ng-click="editBook(book)" role="button" data-toggle="modal">Edit</a></th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
