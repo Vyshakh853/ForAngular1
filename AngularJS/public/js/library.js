@@ -148,35 +148,3 @@ app.controller("listDisplay", function($scope, $http, $timeout, serverOperation)
     }
 
 });
-
-/*Services for server side operations*/
-app.service('serverOperation', function($http) {
-    this.getBookDetails = function(urlCondition) {
-        console.log(urlCondition);
-        return $http.get('http://localhost:8080/Books/' + urlCondition);
-    }
-    this.postData = function(data) {
-        return $http.post('http://localhost:8080/Books/', data);
-    }
-    this.putData = function(data) {
-        return $http.put('http://localhost:8080/Books/' + data.id, data);
-    }
-    this.deleteData = function(id) {
-        return $http.delete('http://localhost:8080/Books/' + id);
-    }
-});
-/*Directive for table display*/
-app.directive('tableDisplay',function(){
-	return {
-		restrict: 'E',
-		templateUrl: '../table-display.html'
-	};
-});
-
-app.directive('modalDisplay',function(){
-	return {
-		restrict: 'E',
-		templateUrl: '../modal.html'
-	};
-});
-
