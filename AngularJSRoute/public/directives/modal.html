@@ -1,0 +1,56 @@
+<div class="modal fade" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button class="close" data-dismiss="modal">&times;</button>
+                                    <h3 class="modal-title">Add Book&nbsp<span class="glyphicon glyphicon-book"></span></h3>
+                                </div>
+                                <form class="horizontal-form" name="inputForm" validate>
+                                    <div class="modal-body modalbody">
+                                        <div class="form-group col-sm-12">
+                                            <label class="col-sm-4 control-label" for="bookname">Book Name</label>
+                                            <input class="col-sm-8 form-control" ng-model="book.Book_name" type="text" name="bookname" required/>
+                                            <span class="col-sm-12" ng-show="inputForm.bookname.$touched && inputForm.bookname.$invalid">The Book name is required.</span>
+                                            <!-- <br> -->
+                                            <label class="col-sm-4 control-label" for="authorname">Author Name</label>
+                                            <input class="col-sm-8 form-control" type="text" ng-model="book.Author_name" id="authorname" required/>
+                                            <span class="col-sm-12" ng-show="inputForm.bookname.$touched && inputForm.bookname.$invalid">The Author name is required.</span>
+                                            <br>
+                                            <label class="col-sm-4 control-label" for="publishername">Publisher Name</label>
+                                            <input class="col-sm-8 form-control" ng-model="book.Publisher_name" type="text" name="publishername" required>
+                                            <span class="col-sm-12" ng-show="inputForm.publishername.$touched && inputForm.publishername.$invalid">The publisher name is required.</span>
+                                            <br>
+                                            <label class="col-sm-4 control-label" for="publishedyear">Published year</label>
+                                            <input class="col-sm-8 form-control" type="text" ng-model="book.Published_year" pattern="[0-9]{4}" title="Enter year in YYYY format" name="publishedyear" required>
+                                            <span class="col-sm-12" ng-show="inputForm.publishedyear.$touched && inputForm.publishedyear.$invalid">The published year is required or Year should br 'YYYY' format.</span>
+                                            <br>
+                                            <br>
+                                            <label class="col-sm-4 control-label" for="type">Type</label>
+                                            <span class="col-sm-8 form-control"><input type="radio" name="type" ng-model="book.Type" id="fiction" value="Fiction" required>Fiction &nbsp
+                                            <input type="radio" name="type" id="nonfiction" ng-model="book.Type" value="Non-Fiction">Non-Fiction</span>
+                                            <span class="col-sm-12" ng-show="inputForm.type.$touched && inputForm.type.$invalid">The type is required.</span>
+                                            <br>
+                                            <label class="col-sm-4 control-label" for="Genres">Genres</label>
+                                            <!-- <input class="col-sm-8 form-control" type="text" id="Genres" required> -->
+                                            <input class="col-sm-8 form-control" type="text" name="Genres" ng-model="book.Genres" required>
+                                            <span class="col-sm-12" ng-show="inputForm.Genres.$touched && inputForm.Genres.$invalid">The Genres is required.</span>
+                                            <br>
+                                            <label class="col-sm-4 control-label" for="language">Language</label>
+                                            <input class="col-sm-8 form-control" type="text" name="language" ng-model="book.Language" required>
+                                            <span class="col-sm-12" ng-show="inputForm.language.$touched && inputForm.language.$invalid">The language of book is required.</span>
+                                            <br>
+                                            <label class="col-sm-4 control-label" for="Price">Price</label>
+                                            <input class="col-sm-8 form-control" type="text" name="price" ng-model="book.Price" required>
+                                            <span class="col-sm-12" ng-show="inputForm.price.$touched && inputForm.price.$invalid">The price of book is required.</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" role="button" data-dismiss="modal">Cancel</button>
+                                        <button class="btn btn-success" ng-click="addBook(book)" type="submit" ng-disabled="inputForm.$invalid || inputForm.$pristine" ng-show='addButtonShow'>Add</button>
+                                        <button class="btn btn-success" ng-click="editSave(book)" type="submit" ng-disabled="inputForm.$invalid || inputForm.$pristine" ng-show='editButtonShow'>Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>

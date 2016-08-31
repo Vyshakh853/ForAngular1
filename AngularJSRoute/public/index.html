@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Global Library</title>
+    <meta charset="utf-8">
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-glyphicons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <!-- <script src="includes/js/modernizr-2.6.2.min.js"></script> -->
+    <!-- Using google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+<body>
+    <!--Header section -->
+    <div class="navbar navbar-default navbar-fixed-top" id="header">
+        <a id="brandName" href="#"><span>Friends Library<sub>Explore today, Discover tomorrow!</sub></span></a>
+    </div>
+    <div class="container" ng-app="LibApp" ng-controller="listDisplay" id="main">
+        <!-- Div tag for containing three column data -->
+        <div class="row">
+            <!-- First column -->
+            <div class="col-sm-3 feature">
+                <!-- For the firt panel -->
+                <div class="panel panel-default" id="threeColumns">
+                    <div class="panel-heading text-center height">
+                        <h3 class="panel-title">Add new Books</h3>
+                    </div>
+                    <!-- <a href="#myModal" ng-click="add()" role="button" id="addBooks" class="btn btn-warning btn-block height" data-toggle="modal">Add Books</a> -->
+                    <a href="/add" ng-click="add()" class="btn btn-warning btn-block height">Add Books</a>
+                    <!-- Modal window -->
+                    <!-- <modal-display></modal-display> -->
+                </div>
+            </div>
+            <!-- Second column -->
+            <div class="col-sm-6 feature">
+                <div class="panel panel-default text-center" id="threeColumns">
+                    <div class="panel-heading height" id="searchtextboxpadding">
+                        <h3 class="panel-title"><input class="text-center" ng-model="searchVal" id="searchtextbox" type="text" placeholder="Search here.."></h3>
+                    </div>
+                    <!-- <button type="button" id="search" class="btn btn-danger btn-block height" ng-click="searchBook()">Search</button> -->
+                    <a href="/load" role="button" id="search" class="btn btn-danger btn-block height" ng-click="searchBook()">Search</a>
+                    </form>
+                </div>
+            </div>
+            <!-- Third column -->
+            <div class="col-sm-3 feature text-center">
+                <div class="panel panel-default" id="threeColumns">
+                    <div class="panel-heading height">
+                        <h3 class="panel-title">Whole Book Details</h3>
+                    </div>
+                    <div></div>
+                    <!-- <button type="button" id="loadDetails" class="btn btn-info btn-block height" ng-click="loadAllBook()">Load</button> -->
+                    <a href="/load" role="button" id="loadDetails" class="btn btn-info btn-block height" ng-click="loadAllBook()">Load</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div ng-view></div>
+    </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p class="footerfont">Website for searching Book details @!
+            <br> Contact us<a href="#">here</a></p>
+        <!-- Each font awesome icons for social links -->
+        <a href="https://www.amazone.com"><i class="fa fa-amazon" style="font-size:48px;"></i></a>
+        <a href="https://www.amazone.com"><i class="fa fa-facebook" style="font-size:48px;"></i></a>
+        <a href="https://www.amazone.com"><i class="fa fa-linkedin-square" style="font-size:48px;"></i></a>
+        <a href="https://www.amazone.com"><i class="fa fa-google-plus" style="font-size:48px;"></i></a>
+        <a href="https://www.amazone.com"><i class="fa fa-instagram" style="font-size:48px;"></i></a>
+        <a href="https://www.amazone.com"><i class="fa fa-skype" style="font-size:48px;"></i></a>
+        <a href="https://www.amazone.com"><i class="fa fa-twitter-square" style="font-size:48px;"></i></a>
+        <a href="https://www.amazone.com"><i class="fa fa-youtube" style="font-size:48px;"></i></a>
+        <!-- footer tag ends here -->
+    </footer>
+    <!-- First try for the online version of jQuery-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+    <!-- If no online access, fallback to our hardcoded version of jQuery -->
+    <script>
+    window.jQuery || document.write('<script src="js/jquery-3.1.0.js"><\/script>')
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/library.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/addEditController.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script> -->
+</body>
+
+</html>
